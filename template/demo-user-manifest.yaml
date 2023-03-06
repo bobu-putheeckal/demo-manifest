@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
         - name: user
-          image: bobput/demo-user-1:latest
+          image: bobput/demo-get-user-1:latest

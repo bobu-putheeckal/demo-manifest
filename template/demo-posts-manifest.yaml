@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
         - name: posts
-          image: bobput/demo-posts-1:latest
+          image: bobput/demo-get-posts-1:latest
