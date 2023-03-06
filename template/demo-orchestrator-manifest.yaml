@@ -33,4 +33,36 @@ spec:
     spec:
       containers:
         - name: orchestrator
-          image: bobput/demo-orchestrator:latest
+          image: bobput/demo-orchestrator:c8a1fcb980f7aeafef038add9213ac317ccd311e
+          env:
+            - name: POSTS_API
+              valueFrom:
+                configMapKeyRef:
+                  name: orchestrator-configmap
+                  key: POSTS_API
+            - name: USER_API
+              valueFrom:
+                configMapKeyRef:
+                  name: orchestrator-configmap
+                  key: USER_API
+            - name: COMMENTS_API
+              valueFrom:
+                configMapKeyRef:
+                  name: orchestrator-configmap
+                  key: COMMENTS_API
+            - name: AUTH_TOKEN
+              valueFrom:
+                configMapKeyRef:
+                  name: orchestrator-configmap
+                  key: AUTH_TOKEN
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orchestrator-configmap
+data:
+  # Add your key-value pairs here
+  POSTS_API: http://posts-service/getPosts
+  USER_API: http://user-service/getUser
+  COMMENTS_API: http://comments-service/getComments
+  AUTH_TOKEN: valid_token

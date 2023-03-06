@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
         - name: comments
-          image: bobput/demo-get-comments-1:latest
+          image: bobput/demo-get-comments-1:8ca4f797160e553bf643c128b4c026aa06af246f

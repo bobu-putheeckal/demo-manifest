@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: ui
-          image: bobput/demo-ui-1:latest
+          image: bobput/demo-ui-1:94ea7d09bc27ec8ab1e0d4f4bedc1db69f7d6d86
           ports:
             - containerPort: 80
               name: ui
