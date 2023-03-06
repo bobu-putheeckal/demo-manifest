@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-service
+  namespace: default
+spec:
+  selector:
+    app: posts
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posts-depl
+  namespace: default
+  labels:
+    app: posts
+spec:
+  selector:
+    matchLabels:
+      app: posts
+  replicas: 3
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: posts
+    spec:
+      containers:
+        - name: posts
+          image: bobput/demo-posts-1:latest
