@@ -37,23 +37,35 @@ spec:
           ports:
             - containerPort: 80
               name: ui
-          # env:
-          #   - name: API
-          #     valueFrom:
-          #       configMapKeyRef:
-          #         name: ui-configmap
-          #         key: API
-          #   - name: AUTH_TOKEN
-          #     valueFrom:
-          #       configMapKeyRef:
-          #         name: ui-configmap
-          #         key: AUTH_TOKEN
+          env:
+            - name: POSTS_API
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: POSTS_API
+            - name: USER_API
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: USER_API
+            - name: COMMENTS_API
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: COMMENTS_API
+            - name: AUTH_TOKEN
+              valueFrom:
+                configMapKeyRef:
+                  name: ui-configmap
+                  key: AUTH_TOKEN
 ---
-# apiVersion: v1
-# kind: ConfigMap
-# metadata:
-#   name: ui-configmap
-# data:
-#   # Add your key-value pairs here
-#   API: {{.Values.api}}
-#   AUTH_TOKEN: {{.Values.authToken}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ui-configmap
+data:
+  # Add your key-value pairs here
+  POSTS_API: http://orchestrator-service/getPosts
+  USER_API: http://orchestrator-service/getUser
+  COMMENTS_API: http://orchestrator-service/getComments
+  AUTH_TOKEN: valid_token
