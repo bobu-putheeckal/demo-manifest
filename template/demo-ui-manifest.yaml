@@ -68,5 +68,5 @@ data:
   POSTS_API: http://orchestrator-service/getPosts
   USER_API: http://orchestrator-service/getUser
   COMMENTS_API: http://orchestrator-service/getComments
-  AUTH_TOKEN: {{.<+env.variables.AUTH>}}
+  AUTH_TOKEN: .<+env.variables.AUTH>
   # AUTH_TOKEN: valid_token
