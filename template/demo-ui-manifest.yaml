@@ -69,4 +69,4 @@ data:
   USER_API: http://orchestrator-service/getUser
   COMMENTS_API: http://orchestrator-service/getComments
   # AUTH_TOKEN: {{.AUTH_TOKEN}}AUTH_TOKEN
-  AUTH_TOKEN: AUTH_TOKEN
+  AUTH_TOKEN: valid_token
