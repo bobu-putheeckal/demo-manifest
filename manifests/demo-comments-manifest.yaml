@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: comments
-  replicas: 1
+  replicas: 3
   strategy:
     type: Recreate
   template:
@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
         - name: comments
-          image: bobput/demo-get-comments-1:8ca4f797160e553bf643c128b4c026aa06af246f
+          image: bobput/demo-get-comments-1:b036ded681559bbfede84735fd4066af50f6d72c

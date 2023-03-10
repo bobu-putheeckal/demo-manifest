@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: ui
-  replicas: 1
+  replicas: 3
   strategy:
     type: Recreate
   template:
@@ -69,7 +69,8 @@ data:
   # USER_API: {{.Values.userApi}}
   # COMMENTS_API: {{.Values.commentsApi}}
   # AUTH_TOKEN: {{.Values.authToken}}
-  POSTS_API: http://demo-orchestrator/getPosts
-  USER_API: http://demo-orchestrator/getUser
-  COMMENTS_API: http://demo-orchestrator/getComments
+
+  POSTS_API: http://orchestrator-service/getPosts
+  USER_API: http://orchestrator-service/getUser
+  COMMENTS_API: http://orchestrator-service/getComments
   AUTH_TOKEN: valid_token

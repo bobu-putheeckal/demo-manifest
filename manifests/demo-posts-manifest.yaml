@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: posts
-  replicas: 1
+  replicas: 3
   strategy:
     type: Recreate
   template:
@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
         - name: posts
-          image: bobput/demo-get-posts-1:b0e2a6119db54d7f28fd9e165742ba627a50de06
+          image: bobput/demo-get-posts-1:d31221f88c3a03d9f181c60adf8845ea01a3623d

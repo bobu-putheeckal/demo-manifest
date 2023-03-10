@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: user
-  replicas: 1
+  replicas: 3
   strategy:
     type: Recreate
   template:
@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
         - name: user
-          image: bobput/demo-get-user-1:latest
+          image: bobput/demo-get-user-1:3af72e7c77d77533fb116de0854414457e62a370

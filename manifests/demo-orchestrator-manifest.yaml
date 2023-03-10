@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: orchestrator
-  replicas: 1
+  replicas: 3
   strategy:
     type: Recreate
   template:
@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: orchestrator
-          image: bobput/demo-orchestrator:c8a1fcb980f7aeafef038add9213ac317ccd311e
+          image: bobput/demo-orchestrator:2fd2163f5ee2f22ab64676c7667cbaf5ca7229a1
           env:
             - name: POSTS_API
               valueFrom:
