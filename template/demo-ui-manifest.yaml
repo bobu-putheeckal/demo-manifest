@@ -65,8 +65,8 @@ metadata:
   name: ui-configmap
 data:
   # Add your key-value pairs here
-  POSTS_API: http://orchestrator-service/getPosts
-  USER_API: http://orchestrator-service/getUser
-  COMMENTS_API: http://orchestrator-service/getComments
-  # AUTH_TOKEN: {.<+env.variables.AUTH>}
-  AUTH_TOKEN: valid_token
+  POSTS_API: {{.Values.postsApi}}
+  USER_API: {{.Values.userApi}}
+  COMMENTS_API: {{.Values.commentsApi}}
+  AUTH_TOKEN: {{.Values.authToken}}
+  # AUTH_TOKEN: valid_token

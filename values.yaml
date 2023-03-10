@@ -1,0 +1,4 @@
+authToken: <+serviceVariables.AUTH_TOKEN>
+commentsApi: <+serviceVariables.COMMENTS_API>
+userApi: <+serviceVariables.USER_API>
+postsApi: <+serviceVariables.POSTS_API>
