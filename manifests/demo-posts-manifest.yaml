@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: user-service
+  name: posts-service
   namespace: default
 spec:
   selector:
-    app: user
+    app: posts
   type: NodePort
   ports:
     - protocol: TCP
@@ -15,22 +15,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-depl
+  name: posts-depl
   namespace: default
   labels:
-    app: user
+    app: posts
 spec:
   selector:
     matchLabels:
-      app: user
-  replicas: 3
+      app: posts
+  replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: user
+        app: posts
     spec:
       containers:
-        - name: user
-          image: bobput/demo-get-user-1:latest
+        - name: posts
+          image: bobput/demo-get-posts-1:b0e2a6119db54d7f28fd9e165742ba627a50de06

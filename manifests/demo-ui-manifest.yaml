@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: ui
-  replicas: 3
+  replicas: 1
   strategy:
     type: Recreate
   template:
@@ -65,8 +65,11 @@ metadata:
   name: ui-configmap
 data:
   # Add your key-value pairs here
-  POSTS_API: {{.Values.postsApi}}
-  USER_API: {{.Values.userApi}}
-  COMMENTS_API: {{.Values.commentsApi}}
-  AUTH_TOKEN: {{.Values.authToken}}
-  # AUTH_TOKEN: valid_token
+  # POSTS_API: {{.Values.postsApi}}
+  # USER_API: {{.Values.userApi}}
+  # COMMENTS_API: {{.Values.commentsApi}}
+  # AUTH_TOKEN: {{.Values.authToken}}
+  POSTS_API: http://demo-orchestrator/getPosts
+  USER_API: http://demo-orchestrator/getUser
+  COMMENTS_API: http://demo-orchestrator/getComments
+  AUTH_TOKEN: valid_token

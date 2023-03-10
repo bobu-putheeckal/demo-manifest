@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: orchestrator
-  replicas: 3
+  replicas: 1
   strategy:
     type: Recreate
   template:
